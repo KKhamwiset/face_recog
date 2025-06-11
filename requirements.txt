@@ -4,4 +4,4 @@ pyyaml
 streamlit
 face_recognition @ git+https://github.com/thetoby9944/face_recognition
 standard-imghdr
-
+face_recognition
