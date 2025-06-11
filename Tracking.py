@@ -4,6 +4,7 @@ import cv2
 import face_recognition as frg
 import yaml 
 from utils import recognize, build_dataset
+from pathlib import Path
 # Path: code\app.py
 
 st.set_page_config(layout="wide")
@@ -50,15 +51,17 @@ elif choice == "Webcam":
     st.title("Face Recognition App")
     st.write(WEBCAM_PROMPT)
     #Camera Settings
-    cam = cv2.VideoCapture(0)
-    cam.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
-    cam.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
+    cam=cv2.Videocamture(0,cv2.cam_DSHOW) #// if you have second camera you can set first parameter as 1
+    if not (cam.isOpened()):
+        print("Could not open video device")
+    cam.set(cv2.cam_PROP_FRAME_WIDTH, 640)
+    cam.set(cv2.cam_PROP_FRAME_HEIGHT, 480)
     FRAME_WINDOW = st.image([])
     
     while True:
         ret, frame = cam.read()
         if not ret:
-            st.error("Failed to capture frame from camera")
+            st.error("Failed to camture frame from camera")
             st.info("Please turn off the other app that is using the camera and restart app")
             st.stop()
         image, name, id = recognize(frame,TOLERANCE)
