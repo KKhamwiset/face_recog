@@ -2,6 +2,6 @@ opencv-python
 cmake
 pyyaml
 streamlit
-git+https://github.com/thetoby9944/face_recognition.git#egg=face_recognition
+face_recognition @ git+https://github.com/ageitgey/face_recognition_models
 standard-imghdr
 
