@@ -54,8 +54,8 @@ elif choice == "Webcam":
     cam=cv2.VideoCapture(0,cv2.CAP_DSHOW) #// if you have second camera you can set first parameter as 1
     if not (cam.isOpened()):
         print("Could not open video device")
-    cam.set(cv2.cam_PROP_FRAME_WIDTH, 640)
-    cam.set(cv2.cam_PROP_FRAME_HEIGHT, 480)
+    cam.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
+    cam.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
     FRAME_WINDOW = st.image([])
     
     while True:
