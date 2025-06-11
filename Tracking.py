@@ -51,7 +51,7 @@ elif choice == "Webcam":
     st.title("Face Recognition App")
     st.write(WEBCAM_PROMPT)
     #Camera Settings
-    cam=cv2.VideoCapture(0,cv2.cam_DSHOW) #// if you have second camera you can set first parameter as 1
+    cam=cv2.VideoCapture(0,cv2.CAP_DSHOW) #// if you have second camera you can set first parameter as 1
     if not (cam.isOpened()):
         print("Could not open video device")
     cam.set(cv2.cam_PROP_FRAME_WIDTH, 640)
