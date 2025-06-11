@@ -1,8 +1,7 @@
 opencv-python
 cmake
 pyyaml
-streamlit==1.22.0
-
-#Fork of face_recognition using prebuild dlib library instead
+streamlit
 face_recognition @ git+https://github.com/thetoby9944/face_recognition
+standard-imghdr
 
