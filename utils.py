@@ -45,7 +45,7 @@ def submitNew(name, id, image, old_idx=None):
     database = get_databse()
     #Read image 
     if type(image) != np.ndarray:
-        image = cv2.imdecode(np.fromstring(image.read(), np.uint8), 1)
+         image = cv2.imdecode(np.frombuffer(image.read(), np.uint8), 1)
 
     isFaceInPic = isFaceExists(image)
     if not isFaceInPic:
